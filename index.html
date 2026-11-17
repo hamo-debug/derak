@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <meta name="description" content="درعك Derak: افحص الرسائل والروابط المشبوهة قبل فتحها، واعرف أسباب التحذير بالعربية أو الإنجليزية. أداة مجانية مبدئية من محمد الصعيدي.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Derak | فاحص الرسائل والروابط">
+  <meta property="og:description" content="افحص الرسائل والروابط المشبوهة قبل فتحها، واعرف أسباب التحذير بالعربية أو الإنجليزية.">
+  <title>Derak (درعك) | فاحص الرسائل والروابط - Mohamed El-Saiedy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="درعك - الصفحة الرئيسية"><span class="brand-mark" aria-hidden="true">د</span><span>درعك</span></a>
+    <div class="top-actions"><span class="top-note"><span class="status-dot"></span><span id="local-label">فحص محلي للرسالة</span></span><button class="lang-button" id="language-button" type="button" aria-label="Switch language">English</button></div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow" id="eyebrow">خليك واعي قبل ما تضغط</p><h1 id="hero-title">وصلك شيء مريب؟<br><span>افحصه الأول.</span></h1><p class="intro" id="intro">الصق نص الرسالة أو الرابط، ودرعك هيوضح لك العلامات اللي تستحق الانتباه — من غير ما يفتح الرابط.</p></div>
+      <div class="shield-art" aria-hidden="true"><div class="shield-glow"></div><svg viewBox="0 0 120 140" role="presentation"><path d="M60 8 103 24v37c0 31-18 54-43 69C35 115 17 92 17 61V24L60 8Z" fill="currentColor" opacity=".12"/><path d="M60 15 96 28v33c0 26-14 45-36 59C38 106 24 87 24 61V28l36-13Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="m43 67 12 12 24-27" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="spark spark-one">✦</span><span class="spark spark-two">✧</span></div>
+    </section>
+    <section class="checker card" aria-labelledby="checker-title">
+      <div class="section-heading"><div class="step">١</div><div><h2 id="checker-title">حط الرسالة هنا</h2><p id="checker-hint">انسخ النص أو الرابط كما وصلك</p></div></div>
+      <label class="sr-only" id="input-label" for="message">نص الرسالة أو الرابط</label>
+      <textarea id="message" maxlength="5000" placeholder="مثال: تم إيقاف حسابك مؤقتًا. اضغط هنا لتأكيد بياناتك..." spellcheck="false"></textarea>
+      <div class="input-footer"><span id="char-count">٠ / ٥٠٠٠</span><div class="actions"><button class="button button-quiet" id="clear-button" type="button">مسح</button><button class="button button-primary" id="check-button" type="button"><span aria-hidden="true">⌕</span> افحص الآن</button></div></div>
+      <p class="privacy-note" id="privacy-note"><span aria-hidden="true">◇</span> الفحص بيتم على جهازك. النص مش بيتبعت لأي مكان.</p>
+    </section>
+    <section id="result" class="result card" aria-live="polite" hidden></section>
+    <section class="examples" aria-labelledby="examples-title"><div class="examples-head"><div><p class="eyebrow" id="examples-eyebrow">مش عارف تبدأ؟</p><h2 id="examples-title">جرّب مثال</h2></div><span class="examples-hint" id="examples-hint">اضغط على مثال عشان تجربه</span></div>
+      <div class="example-grid">
+        <button class="example-card example-danger" type="button" data-example="urgent"><span class="example-icon">!</span><span><strong id="example-title-urgent">رسالة مستعجلة</strong><small id="example-sub-urgent">تهديد بإيقاف الحساب</small></span><span class="arrow">←</span></button>
+        <button class="example-card example-link" type="button" data-example="link"><span class="example-icon">↗</span><span><strong id="example-title-link">رابط مشبوه</strong><small id="example-sub-link">عنوان مختصر أو غير مألوف</small></span><span class="arrow">←</span></button>
+        <button class="example-card example-safe" type="button" data-example="safe"><span class="example-icon">✓</span><span><strong id="example-title-safe">رسالة عادية</strong><small id="example-sub-safe">للمقارنة والتجربة</small></span><span class="arrow">←</span></button>
+      </div>
+    </section>
+    <aside class="disclaimer"><span class="disclaimer-icon">i</span><p id="disclaimer"><strong>خد بالك:</strong> الفحص المبدئي مش ضمان إن الرسالة آمنة. لو الرسالة بتطلب كلمة مرور أو كود تحقق أو بيانات بنكية، ما تبعتهاش. ادخل على الموقع الرسمي بنفسك أو اتصل بالجهة من رقم موثوق.</p></aside>
+  </main>
+  <footer><span id="footer-brand">درعك — خطوة صغيرة تحمي بياناتك</span><span id="footer-note">نسخة تجريبية · الفحص مبدئي</span><span id="footer-owner">Website owned by Mohamed El-Saiedy</span><nav class="social-links" aria-label="Social media"><a href="https://www.instagram.com/els3edy.19?vrfl=dmxjeHdocGl2eW5i" target="_blank" rel="noopener noreferrer" aria-label="Instagram account"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/></svg></a><a href="https://www.facebook.com/share/1FXgNUzG9y/" target="_blank" rel="noopener noreferrer" aria-label="Facebook page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" fill="currentColor"/></svg></a></nav></footer>
+</body>
+</html>
